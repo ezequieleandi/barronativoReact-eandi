@@ -1,0 +1,35 @@
+.header{
+    background-color: #EBD8C3;
+    width: 100%;
+}
+.headerDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.headerDiv a img{
+    margin: 10% 0 0 2%;
+    height: 70%;
+    width: 70%;
+}
+.headerDiv h1{
+    margin: 0 6% 1% 1%;
+    font-size: 3rem;
+}
+.navItem{
+    background-color: #EBD8C3 !important;
+}
+.navItem div{
+    display: flex;
+    justify-content: center;
+}
+.navItem div ul li{
+    font-family: 'Raleway' sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: bold;
+    margin-right: 1%;
+    list-style-type: none;
+    padding: 0 20px;
+}
