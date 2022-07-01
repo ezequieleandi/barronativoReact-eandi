@@ -1,6 +1,6 @@
 
 import NavBar from './components/navBar/NavBar';
-import ItemListContainer from './components/itemList/ItemListContainer';
+import ItemList from './components/itemList/ItemList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <ItemListContainer saludos="gracias por visitarnos, saludos" />
+      <ItemList/>
     </div>
   );
 }
