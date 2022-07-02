@@ -1,15 +1,15 @@
 
 import NavBar from './components/navBar/NavBar';
-import ItemList from './components/itemList/ItemList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import ItemListContainer from './components/itemListcontainer/ItemListContainer';
 
 function App() {
   
   return (
     <div>
       <NavBar />
-      <ItemList/>
+      <ItemListContainer />
     </div>
   );
 }
