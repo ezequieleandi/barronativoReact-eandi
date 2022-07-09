@@ -4,7 +4,7 @@ function Item({prod}) {
     const { id, producto, linea, imagen, capacidad, precio } = prod;
 
   return (
-    <div>
+    <>
         <div className='divProductos'>
             <div key={id} className='cardProductos'>
               <img src={imagen} alt="" />
@@ -18,7 +18,7 @@ function Item({prod}) {
               </div>
             </div>
           </div>
-    </div>
+    </>
   )
 }
 

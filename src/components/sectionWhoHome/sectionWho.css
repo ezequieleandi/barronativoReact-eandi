@@ -1,0 +1,27 @@
+.sectionQuienesSomos{
+    height: 100%;
+    width: 100%;
+}
+.flexPresentacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0 20px 0;
+}
+.flexPresentacion img{
+    height: 100%;
+    width: 50%;
+}
+.flexPresentacion div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.flexPresentacion div p{
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 5%;
+}
