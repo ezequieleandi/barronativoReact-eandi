@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 function Item({prod}) {
     const { id, producto, linea, imagen, capacidad, precio } = prod;
@@ -13,7 +14,9 @@ function Item({prod}) {
                 <div className='row'>
                   <p className='col-12'>{capacidad}</p>
                   <p className='col-12'>${precio}</p>
-                  <button type='button' className='btn btn-secondary col-12'> añadir </button>
+                  <Link to={`/detalle/${id}`}>
+                    <button type='button' className='btn btn-secondary col-12'> detalle </button>
+                  </Link>
                 </div>
               </div>
             </div>
