@@ -2,8 +2,8 @@ import './aboutProducts.css';
 
 function AboutProductsHome() {
   return (
-    <div class="flexSobreProd">
-        <div class="infoProd">
+    <div className="flexSobreProd">
+        <div className="infoProd">
             <h2>Sobre nuestros productos</h2>
             <ul>
                 <li>100% artesanal, hecho con torno alfarero.</li>

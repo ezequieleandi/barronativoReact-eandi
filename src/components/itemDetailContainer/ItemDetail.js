@@ -16,12 +16,13 @@ function ItemDetail() {
       .then(respuesta=>{setProductos(respuesta)})
       .catch(error=>console.log(error))
     }
-  }, [])
-  console.log(products)
+  }, [id])
 
   return (
     <div>
-      <h1>EL PRODUCTO ELEGIDO ES {products.producto} - {products.linea}</h1>
+      {products.map((element)=>(
+        <h1>EL PRODUCTO ELEGIDO ES: {element.producto} - {element.linea}</h1>
+      ))}
     </div>
   )
 }
