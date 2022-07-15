@@ -1,0 +1,25 @@
+.cardProductos{
+        background-color: white;
+        height: 350px;
+        width: 270px;
+        color: black;
+        text-align: center;
+        border-radius: 7%;
+        overflow: hidden;
+        transition: all 1.5s;
+        margin-top: 2%;
+}
+.cardProductos:hover{
+    transform: scale(1.05);
+}
+.cardProductos img{
+    height: 50%;
+    width: 100%;
+}
+.divContCard{
+            font-size: 0.8rem;
+}
+
+/* #cardCuencos{
+    height: 425px;
+} */

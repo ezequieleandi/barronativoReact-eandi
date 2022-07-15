@@ -16,7 +16,10 @@ function NavBar() {
                 <span className="navbar-toggler-icon"></span>
               </button>
               
-              <div className="collapse navbar-collapse headerDiv" id="navbarNavDropdown"> 
+              <div className="collapse navbar-collapse headerDiv" id="navbarNavDropdown">
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span className="navbar-toggler-icon"></span>
+                </button> 
                 <ul className="navbar-nav">
                   <Link to='/'>
                     <li className="nav-item">

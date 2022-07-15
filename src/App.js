@@ -7,23 +7,26 @@ import Footer from './components/footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Home from './components/home/Home';
+import {ProductProvider} from './context/ProductContext';
 
 function App() {
   
   return (
-    <BrowserRouter>
-      <div>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/productos' element={<ItemListContainer />}/>
-          <Route path='/producto/:categoriaId' element={<ItemListContainer />}/>
-          <Route path='/carrito' element={<Cart/>}/>
-          <Route path='/detalle/:id' element={<ItemDetail/>}/>
-        </Routes>
-        <Footer/>
-      </div>
-    </BrowserRouter>
+    <ProductProvider>
+      <BrowserRouter>
+        <div>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/productos' element={<ItemListContainer />} />
+            <Route path='/producto/:categoriaId' element={<ItemListContainer />} />
+            <Route path='/carrito' element={<Cart />} />
+            <Route path='/detalle/:id' element={<ItemDetail />} />
+          </Routes>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </ProductProvider>
   );
 }
 
