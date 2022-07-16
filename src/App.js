@@ -7,12 +7,12 @@ import Footer from './components/footer/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Home from './components/home/Home';
-import {ProductProvider} from './context/ProductContext';
+import {CartProvider} from './context/CartContext';
 
 function App() {
   
   return (
-    <ProductProvider>
+    <CartProvider>
       <BrowserRouter>
         <div>
           <NavBar />
@@ -26,7 +26,7 @@ function App() {
           <Footer />
         </div>
       </BrowserRouter>
-    </ProductProvider>
+    </CartProvider>
   );
 }
 

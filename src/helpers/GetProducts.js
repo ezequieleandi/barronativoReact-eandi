@@ -10,20 +10,20 @@ import matePureza from '../imgBarronativo2/matesMod/purezaMod.jpg'
 import mateEmpatia from '../imgBarronativo2/matesMod/empatiaMod.jpg'
 
 let productos = [
-  {id:1, producto: "TAZA", linea: "Linea AMOR", imagen: tazaAmor, capacidad: "250ml", precio: 580},
-  {id:2, producto: "TAZA", linea: "Linea CALMA", imagen: tazaCalma, capacidad:"250ml", precio: 680},
-  {id:3, producto: "TAZA", linea: "Linea EMPATIA", imagen: tazaEmpatia, capacidad:"250ml", precio: 650},
+  {id:1, producto: "TAZA", linea: "Linea AMOR", stock:15, imagen: tazaAmor, capacidad: "250ml", precio: 580},
+  {id:2, producto: "TAZA", linea: "Linea CALMA", stock:10, imagen: tazaCalma, capacidad:"250ml", precio: 680},
+  {id:3, producto: "TAZA", linea: "Linea EMPATIA", stock:13, imagen: tazaEmpatia, capacidad:"250ml", precio: 650},
 
 
-  {id:4, producto: "CUENCO", linea: "Linea PAZ", imagen: cuencoPaz, capacidad: "mediano 12cm x 7cm", precio: 880},
-  {id:5, producto: "CUENCO", linea: "Linea AMOR", imagen: cuencoAmor, capacidad: "mediano 12cm x 7cm", precio: 880},
-  {id:6, producto: "CUENCO", linea: "Linea VIDA", imagen: cuencoVida, capacidad: "mediano 12cm x 7cm", precio: 880},
+  {id:4, producto: "CUENCO", linea: "Linea PAZ", stock:8, imagen: cuencoPaz, capacidad: "mediano 12cm x 7cm", precio: 880},
+  {id:5, producto: "CUENCO", linea: "Linea AMOR", stock:8, imagen: cuencoAmor, capacidad: "mediano 12cm x 7cm", precio: 880},
+  {id:6, producto: "CUENCO", linea: "Linea VIDA", stock:5, imagen: cuencoVida, capacidad: "mediano 12cm x 7cm", precio: 880},
 
 
-  {id:7, producto: "MATE", linea: "Linea CALMA", imagen: mateCalma,capacidad: "250ml", precio: 880},
-  {id:8, producto: "MATE", linea: "Linea LIBERTAD", imagen: mateLibertad,capacidad: "250ml", precio: 700},
-  {id:9, producto: "MATE", linea: "Linea PUREZA", imagen: matePureza,capacidad: "250ml", precio: 750},
-  {id:10, producto: "MATE", linea: "Linea EMPATIA", imagen: mateEmpatia,capacidad: "250ml", precio: 790}
+  {id:7, producto: "MATE", linea: "Linea CALMA", stock:7, imagen: mateCalma,capacidad: "250ml", precio: 880},
+  {id:8, producto: "MATE", linea: "Linea LIBERTAD", stock:16, imagen: mateLibertad,capacidad: "250ml", precio: 700},
+  {id:9, producto: "MATE", linea: "Linea PUREZA", stock:14, imagen: matePureza,capacidad: "250ml", precio: 750},
+  {id:10, producto: "MATE", linea: "Linea EMPATIA", stock:11, imagen: mateEmpatia,capacidad: "250ml", precio: 790}
 ]
 
 export const getProductos = new Promise((resuelto, rechazado) => {
