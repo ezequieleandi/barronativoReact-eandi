@@ -3,17 +3,19 @@ import {Link, useParams} from 'react-router-dom';
 import {useState, useEffect, useContext} from 'react';
 import {CartContext} from '../../context/CartContext';
 import {getDocs, collection, getFirestore, getDoc, doc} from 'firebase/firestore';
+import ConfirmarCompra from '../confirmarCompra/ConfirmarCompra';
 
 function ItemDetail() {
   const [products, setProductos] = useState([]);
   const [cantidad, setCantidad] = useState();
-  const {addItem} = useContext(CartContext)
+  const {addItem, cantidadTotal} = useContext(CartContext)
   const {id} = useParams();
 
   const contador = (contador)=>{
     setCantidad(contador)
     const producto = {item: products, quantity: contador}
     addItem(producto)
+    cantidadTotal()
   }
 
   useEffect(()=>{
@@ -37,7 +39,7 @@ function ItemDetail() {
       <h1>EL PRODUCTO ELEGIDO ES:</h1>
       <h3>{products.producto} - {products.linea}</h3>
       {cantidad ? 
-      <Link to="/carrito"> <button>Terminar compra</button> </Link> : 
+      <ConfirmarCompra/> : 
       <ItemCount stock={products.stock} onAdd={contador}/>}
     </div>
   )

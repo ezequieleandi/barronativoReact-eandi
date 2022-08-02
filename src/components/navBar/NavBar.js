@@ -1,9 +1,13 @@
 import logo from '../../imgBarronativo2/extras/logo22.jpg';
 import imgCarrito from '../../imgBarronativo2/carritoImg.svg';
+import {CartContext} from '../../context/CartContext';
+import {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import './navBar.css';
 
 function NavBar() {
+  const {cantTotal} = useContext(CartContext)
+
   return (
     <header className='header'>
         <div className='headerDiv'>
@@ -37,26 +41,11 @@ function NavBar() {
                       <p className="nav-link">PRODUCTOS</p>
                     </li>
                   </Link>
-                  <Link to='/producto/MATE'>
-                    <li className="nav-item">
-                      <p className="nav-link">Mates</p>
-                    </li>
-                  </Link>
-                  <Link to='/producto/CUENCO'>
-                    <li className="nav-item">
-                      <p className="nav-link">Cuencos</p>
-                    </li>
-                  </Link>
-                  <Link to='/producto/TAZA'>
-                    <li className="nav-item">
-                      <p className="nav-link">Tazas</p>
-                    </li>
-                  </Link>
                 </ul>
               </div>
             </div>
             <Link to='/carrito'>
-              <img src={imgCarrito} alt="carrito de compras"/>
+            <button type="button" class="position-relative"><img title='ver carrito' src={imgCarrito} alt="Carrito de compras"/><span class="position-absolute top-100 end-50 translate-middle badge rounded-pill bg-danger">{cantTotal}</span></button>
             </Link>
           </nav>
     </header>

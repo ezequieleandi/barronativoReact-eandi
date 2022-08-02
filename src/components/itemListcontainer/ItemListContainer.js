@@ -1,7 +1,9 @@
 import {useState, useEffect} from 'react';
 import ItemList from '../itemList/ItemList';
+import {Link} from 'react-router-dom';
 import {useParams} from 'react-router-dom';
 import {getDocs, collection, getFirestore, query, where} from 'firebase/firestore';
+import '../navBar/navBar.css';
 
 function ItemListContainer() {
     const [products, setProductos] = useState([]);
@@ -9,26 +11,39 @@ function ItemListContainer() {
     const {categoriaId} = useParams();
 
     useEffect(()=>{
-      if(categoriaId){
-        const db = getFirestore();
-        const queryCollection = collection(db, 'productos');
-        const queryCollectionFilter = query(queryCollection, where('producto', '==', categoriaId))
-        getDocs(queryCollectionFilter)
-          .then(resp => setProductos(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
-          .catch(error => console.log(error))
-          .finally(() => setLoading(false))
-      }else{
-        const db = getFirestore();
-        const queryCollection = collection(db, 'productos');
-        getDocs(queryCollection)
-          .then(resp => setProductos(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
-          .catch(error => console.log(error))
-          .finally(() => setLoading(false))
-      }
+      const db = getFirestore();
+      const queryCollection = collection(db, 'productos');
+      const queryCollectionFilter = categoriaId ? query(queryCollection, where('producto', '==', categoriaId)) : queryCollection
+      
+      getDocs(queryCollectionFilter)
+        .then(resp => setProductos(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
+        .catch(error => console.log(error))
+        .finally(() => setLoading(false))
     }, [categoriaId])
   
   return (
     <>
+      <nav className="navbar navbar-expand-lg navbar-light navItem">
+        <div className="collapse navbar-collapse headerDiv" id="navbarNavDropdown">
+          <ul className="navbar-nav">
+            <Link to='/producto/MATE'>
+              <li className="nav-item">
+                <p className="nav-link">Mates</p>
+              </li>
+            </Link>
+            <Link to='/producto/CUENCO'>
+              <li className="nav-item">
+                <p className="nav-link">Cuencos</p>
+              </li>
+            </Link>
+            <Link to='/producto/TAZA'>
+              <li className="nav-item">
+                <p className="nav-link">Tazas</p>
+              </li>
+            </Link>
+          </ul>
+        </div>
+      </nav>
         {loading ? <h2>cargando...</h2> 
         : 
         (<ItemList producto = {products}/>)}
