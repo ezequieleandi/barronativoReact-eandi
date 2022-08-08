@@ -1,0 +1,24 @@
+.divCartEmpty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.divCartEmpty p{
+    font-size: 1.5rem;
+}
+.divCartEmpty button{
+    background-color: #EBD8C3;
+}
+.divCart{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.divCart p{
+    width: 80vw;
+    background-color: #F7E9D7;
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+}

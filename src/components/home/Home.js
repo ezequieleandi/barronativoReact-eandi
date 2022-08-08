@@ -1,13 +1,13 @@
-import AboutProductsHome from "../aboutProductsHome/AboutProductsHome"
-import SectionContactHome from "../sectionContactHome/SectionContactHome"
-import SectionWhoHome from "../sectionWhoHome/SectionWhoHome"
+import AboutProductsHome from "../aboutProductsHome/AboutProductsHome";
+import SectionContactHome from "../sectionContactHome/SectionContactHome";
+import SectionWhoHome from "../sectionWhoHome/SectionWhoHome";
 
 function Home() {
   return (
     <div>
-        <SectionWhoHome/>
-        <AboutProductsHome/>
-        <SectionContactHome/>
+      <SectionWhoHome />
+      <AboutProductsHome />
+      <SectionContactHome />
     </div>
   )
 }

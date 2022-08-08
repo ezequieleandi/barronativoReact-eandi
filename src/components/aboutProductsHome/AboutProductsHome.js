@@ -2,7 +2,7 @@ import './aboutProducts.css';
 
 function AboutProductsHome() {
   return (
-    <div className="flexSobreProd">
+    <div className="flexAboutProd">
         <div className="infoProd">
             <h2>Sobre nuestros productos</h2>
             <ul>

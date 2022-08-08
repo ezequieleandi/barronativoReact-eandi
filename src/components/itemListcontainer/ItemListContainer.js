@@ -1,12 +1,12 @@
 import {useState, useEffect} from 'react';
-import ItemList from '../itemList/ItemList';
 import {Link} from 'react-router-dom';
 import {useParams} from 'react-router-dom';
 import {getDocs, collection, getFirestore, query, where} from 'firebase/firestore';
+import ItemList from '../itemList/ItemList';
 import '../navBar/navBar.css';
 
 function ItemListContainer() {
-    const [products, setProductos] = useState([]);
+    const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const {categoriaId} = useParams();
 
@@ -16,7 +16,7 @@ function ItemListContainer() {
       const queryCollectionFilter = categoriaId ? query(queryCollection, where('producto', '==', categoriaId)) : queryCollection
       
       getDocs(queryCollectionFilter)
-        .then(resp => setProductos(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
+        .then(resp => setProducts(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
         .catch(error => console.log(error))
         .finally(() => setLoading(false))
     }, [categoriaId])
@@ -44,9 +44,9 @@ function ItemListContainer() {
           </ul>
         </div>
       </nav>
-        {loading ? <h2>cargando...</h2> 
-        : 
-        (<ItemList producto = {products}/>)}
+      {loading ? <h2>cargando...</h2>
+        :
+        (<ItemList producto={products} />)}
     </>
   )
 }

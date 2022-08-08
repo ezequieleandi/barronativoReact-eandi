@@ -1,4 +1,4 @@
-.cardProductos{
+.cardProducts{
         background-color: white;
         height: 350px;
         width: 270px;
@@ -9,15 +9,15 @@
         transition: all 1.5s;
         margin-top: 2%;
 }
-.cardProductos:hover{
+.cardProducts:hover{
     transform: scale(1.05);
 }
-.cardProductos img{
+.cardProducts img{
     height: 50%;
     width: 100%;
 }
 .divContCard{
-    font-size: 0.8rem;
+    margin-top: 10%;
 }
 
 /* #cardCuencos{

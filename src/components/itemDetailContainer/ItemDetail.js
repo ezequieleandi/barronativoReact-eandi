@@ -1,19 +1,20 @@
-import ItemCount from '../ItemCount/ItemCount';
-import {Link, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {useState, useEffect, useContext} from 'react';
 import {CartContext} from '../../context/CartContext';
 import {getDocs, collection, getFirestore, getDoc, doc} from 'firebase/firestore';
-import ConfirmarCompra from '../confirmarCompra/ConfirmarCompra';
+import ConfirmToBuy from '../confirmToBuy/ConfirmToBuy';
+import ItemCount from '../ItemCount/ItemCount';
+import './itemDetail.css';
 
 function ItemDetail() {
-  const [products, setProductos] = useState([]);
-  const [cantidad, setCantidad] = useState();
+  const [products, setProducts] = useState([]);
+  const [amount, setAmount] = useState();
   const {addItem, cantidadTotal} = useContext(CartContext)
   const {id} = useParams();
 
-  const contador = (contador)=>{
-    setCantidad(contador)
-    const producto = {item: products, quantity: contador}
+  const counter = (counter)=>{
+    setAmount(counter)
+    const producto = {item: products, quantity: counter}
     addItem(producto)
     cantidadTotal()
   }
@@ -23,24 +24,27 @@ function ItemDetail() {
       const db = getFirestore();
       const queryProduct = doc(db, 'productos', id)
       getDoc(queryProduct)
-      .then(resp=>setProductos({id: resp.id, ...resp.data()}))
+      .then(resp=>setProducts({id: resp.id, ...resp.data()}))
       .catch(error=>console.log(error))
     }else{
       const db = getFirestore();
       const queryCollection = collection(db, 'productos');
       getDocs(queryCollection)
-        .then(resp => setProductos(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
+        .then(resp => setProducts(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }))))
         .catch(error => console.log(error))
     }
   }, [id])
 
   return (
-    <div>
-      <h1>EL PRODUCTO ELEGIDO ES:</h1>
-      <h3>{products.producto} - {products.linea}</h3>
-      {cantidad ? 
-      <ConfirmarCompra/> : 
-      <ItemCount stock={products.stock} onAdd={contador}/>}
+    <div className='divDetail'>
+      <img src={products.imagen} alt="" />
+      <div className='divDetailInt'>
+        <h1>{products.producto} - {products.linea}</h1>
+        <h3>{products.capacidad} - ${products.precio}</h3>
+        {amount ?
+          <ConfirmToBuy /> :
+          <ItemCount stock={products.stock} onAdd={counter} />}
+      </div>
     </div>
   )
 }

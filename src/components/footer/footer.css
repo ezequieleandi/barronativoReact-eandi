@@ -1,4 +1,4 @@
-.footerGral{
+.footerGeneral{
     padding: 3% 0 3% 0;
     background-color: #EBD8C3;
 }
@@ -7,18 +7,18 @@
     align-items: center;
     flex-direction: column;
 }
-.entregaP{
+.deliveryP{
     text-align: center;
     margin-top: 4%;
 }
-.entregaP p{
+.deliveryP p{
     color: white;
     font-size: 1.05rem;
 }
-.pagosP{
+.paymentP{
     margin-top: 2%;
 }
-.pagosP p{
+.paymentP p{
     color: white;
 }
 .redesIconos{

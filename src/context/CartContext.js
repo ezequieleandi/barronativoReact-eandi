@@ -9,25 +9,19 @@ export const CartProvider = ({children}) => {
     const [orden, setOrden] = useState([]);
     const [user, setUser] = useState([]);
 
-    const guardarLocalStorage = (clave, valor) => {
-        localStorage.setItem(clave,JSON.stringify(valor))    
-    }
     //agregar al carrito general
     const addItem = (item) => {
         const inCart = isInCart(item.item.id)
-        if (inCart === -1) {
-            guardarLocalStorage('cartList', [ ...cart, item]) 
+        if (inCart === -1) { 
             const producto = item
             cart.push(producto)
         } else {
             cart[inCart].quantity += item.quantity
             setCart([...cart])
-            guardarLocalStorage('cartList', [...cart])
         }
     }
     //precio total de lo que esta en el carrito
     const precioTotal = () => {
-        console.log(cart)
         return cart.reduce((count, prodObj)=> count = count + (prodObj.item.precio * prodObj.quantity), 0)
     }
     //cantidad de productos en el carrito
@@ -42,6 +36,7 @@ export const CartProvider = ({children}) => {
     //eliminar todo el carrito
     const clear = () => {
         setCart([]);
+        setCantTotal(0)
     }
     //Este producto ¿esta en el carrito?
     const isInCart = (id) => {
@@ -67,7 +62,7 @@ export const CartProvider = ({children}) => {
         const queryInsert = collection(db, "ordenes");
         addDoc(queryInsert, orden)
           .then((resp) => {
-            setOrden(resp.id);
+            setOrden([resp.id]);
           })
           .catch((err) => console.log(err))
           .finally(() => clear());

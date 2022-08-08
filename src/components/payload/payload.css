@@ -1,0 +1,8 @@
+.btnPayload{
+    background-color: #EBD8C3;
+}
+.divPayload{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

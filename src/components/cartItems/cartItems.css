@@ -1,0 +1,10 @@
+.liCart{
+    width: 80vw;
+    background-color: #F7E9D7;
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+.liCart button{
+    margin-left: 2%;
+}

@@ -1,0 +1,15 @@
+.divDetail{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.divDetail img{
+    width: 45%;
+    height: 450px;
+}
+.divDetailInt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 6%;
+}

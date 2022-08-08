@@ -1,3 +1,14 @@
 .divCount{
     display: flex;
 }
+.btnCount{
+    width: 30px;
+    height: 40px;
+    background-color: #EBD8C3;
+}
+.pCount{
+    font-size: 1.5rem;
+}
+.btnDetail{
+    background-color: #EBD8C3;
+}
