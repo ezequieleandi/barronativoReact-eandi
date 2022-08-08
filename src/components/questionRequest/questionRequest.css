@@ -1,0 +1,8 @@
+.btnQuestion{
+    background-color: #EBD8C3;
+}
+.divQuestion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
